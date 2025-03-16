@@ -26,33 +26,36 @@ $userage = ($age < 18) ? '未成年です。' : '成人です。'."\n" ;
 echo $userage;
 
 // Q6 配列
-$kanto = ['東京都','神奈川県','栃木県','千葉県','埼玉県','群馬県','茨城県','愛知県','大阪府'];
+$kanto = ['東京都','神奈川県','栃木県','千葉県','埼玉県','群馬県','茨城県'];
 echo ($kanto[2]).'と'.($kanto[3]).'は関東地方の都道府県です。'."\n";
-$kencho=[
-    $kanto[0]=>'新宿区',
-    $kanto[1]=>'横浜市',
-    $kanto[2]=>'宇都宮市',
-    $kanto[3]=>'千葉市',
-    $kanto[4]=>'さいたま市',
-    $kanto[5]=>'前橋市',
-    $kanto[6]=>'水戸市',
-    $kanto[7]=>'名古屋市',
-    $kanto[8]=>'大阪市',
+$maincity=[
+    '東京都'=>'新宿区',
+    '神奈川県'=>'横浜市',
+    '栃木県'=>'宇都宮市',
+    '千葉県'=>'千葉市',
+    '埼玉県'=>'さいたま市',
+    '群馬県'=>'前橋市',
+    '茨城県'=>'水戸市',
 ];
 
-foreach ($kencho as $key=>$value){
+foreach ($maincity as $key=>$value){
 echo $value."\n";
 }
 
 // Q8 連想配列-2
-foreach ($kencho as $key=>$value){
+foreach ($maincity as $key=>$value){
 if($key===$kanto[4]){
 echo $key.'の県庁所在地は、'.$value.'です。'."\n";
 }}
 
 // Q9 連想配列-3
-foreach ($kencho as $key=>$value){
-    if($key===$kanto[7]||$key===$kanto[8]){
+
+$kanto[7]=['愛知県'];
+$kanto[8]=['大阪府'];
+$maincity['愛知県']='名古屋';
+$maincity['大阪府']='大阪市';
+foreach ($maincity as $key=>$value){
+    if($key==='愛知県'||$key==='大阪府'){
         echo $key.'は関東地方ではありあせん'."\n";
     }
     else{

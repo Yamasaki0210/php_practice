@@ -65,15 +65,15 @@ class Student
         $this->studentName = $name;
     }
 
-    public function attend($gengo)
+    public function attend($class)
     {
         //echo '授業に出席しました。';
-        echo $this->studentName .'は'.$gengo.'の授業に参加しました。学籍番号：'.$this->studentId.'です。'."\n" ;
+        echo $this->studentName .'は'.$class.'の授業に参加しました。学籍番号：'.$this->studentId.'です。'."\n" ;
     }
 }
 
-$gakuseki =new student(120,'山田');
-echo '学籍番号'.$gakuseki->studentId .'番の生徒は'.$gakuseki->studentName.'です。'."\n";
+$stuID =new student(120,'山田');
+echo '学籍番号'.$stuID->studentId .'番の生徒は'.$atuID->studentName.'です。'."\n";
 
 // Q4 オブジェクト-2
 $yamada = new Student(120, '山田');
@@ -85,9 +85,9 @@ $date =new DateTime();
 $date->modify("-1 months");
 echo $date-> format('Y-m-d');
 //問題2
-$mae =new DateTime('1992-04-25');
-$sa = $date-> diff($mae);
-echo $sa-> format('あの日から%a日経過しました。');
+$past =new DateTime('1992-04-25');
+$difference = $date-> diff($past);
+echo $difference-> format('あの日から%a日経過しました。');
 
 
 ?>
